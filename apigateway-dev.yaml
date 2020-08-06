@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: convertcurrency
+        uri: lb://convertcurrency
+        predicates:
+        - Path=/convert/**
+    filters:
+        - TokenRelay=			
